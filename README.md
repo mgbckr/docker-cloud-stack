@@ -1,5 +1,5 @@
 # docker-cloud-stack
-My solution to running [HDFS](), [Zookeeper](), [Accumulo]() and [Kafka]() on Docker. This might not be the most elegant version and its not 100% refined but it serves as a working example. The setup allows to locally start-up a multi-node cluster on the fly. Porting it to a real cluster is pretty much straightforward (we did it :)). However, note that this config uses defaults where ever possible, so hardening the setup for production is still required. 
+My solution to running [Hadoop's HDFS](https://hadoop.apache.org/), [Zookeeper](https://zookeeper.apache.org/), [Kafka](https://kafka.apache.org/) and [Accumulo](https://accumulo.apache.org/) on [Docker](https://www.docker.com/). This might not be the most elegant version and its not 100% refined but it serves as a working example. The setup allows to locally start-up a multi-node cluster on the fly. Porting it to a real cluster is pretty much straightforward (we did it :)). However, note that this config uses defaults where ever possible, so hardening the setup for production is still required. Overall, this setup should still be a good starting point to get the above mentioned stack up and running via Docker.
 
 ## Quickstart
 
