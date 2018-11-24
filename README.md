@@ -1,10 +1,13 @@
 # docker-cloud-stack
-My solution to running [Hadoop's HDFS](https://hadoop.apache.org/), [Zookeeper](https://zookeeper.apache.org/), [Kafka](https://kafka.apache.org/) and [Accumulo](https://accumulo.apache.org/) on [Docker](https://www.docker.com/). This might not be the most elegant version and its not 100% refined but it serves as a working example. The setup allows to locally start-up a multi-node cluster on the fly. Porting it to a real cluster is pretty much straightforward (we did it :)). However, note that this config uses defaults where ever possible, so hardening the setup for production is still required. Overall, this setup should still be a good starting point to get the above mentioned stack up and running via Docker.
+My take on running [Hadoop's HDFS](https://hadoop.apache.org/), [Zookeeper](https://zookeeper.apache.org/), [Kafka](https://kafka.apache.org/) and [Accumulo](https://accumulo.apache.org/) on [Docker](https://www.docker.com/) (see below for alternatives). The setup allows to locally start-up a multi-node cluster on the fly. Porting it to a real cluster is pretty much straightforward (we did it :)). This might not be the most elegant approaches and its not 100% refined but it serves as a working example. Also, note that this config uses defaults where ever possible, so hardening the setup for production is still required. Overall, this setup should still be a good starting point to get the above mentioned stack up and running via Docker.
 
 ## Quickstart
 
 ### Preparation
 ```bash
+# setup cluster
+docker swarm init --advertise-addr=<your ip>
+
 # prepare
 git clone https://github.com/mgbckr/docker-cloud-stack.git
 cd docker-cloud-stack
@@ -43,7 +46,7 @@ docker stack rm cloud-stack
 
 Note that you can restart the cluster and all your data will be kept if nothing went wrong.
 
-## Cluster (swam) deployment
+## Cluster (swarm) deployment
 The only thing you really have to do to run this on a actual docker swarm is setting the correct placement constraints for each node and adjusting the volume mappings.
 
 
