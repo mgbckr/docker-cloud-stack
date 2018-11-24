@@ -94,7 +94,12 @@ Config
 
 Thus, files from `_defaults` are used as an initialization whereas files from longer folder names overwrite files from shorter folder names. Afterwards the actual config files (not in `_defaults`) overwrite these files using the same procedure.   
 
-## Application versions
+## Versions
+I built this on
+```
+Docker version 18.06.1-ce, build e68fc7a
+```
+
 The current versions of the applications are:
 ```
 hadoop_version=3.1.1
@@ -102,7 +107,7 @@ zookeeper_version=3.4.13
 kafka_version=2.0.0
 accumulo_version=1.9.2
 ```
-You cn change them in `Dockerfile.build.sh`. Note, however, that this may require changing the configs also.
+You can the application versions in the `assets/build/Dockerfile.build.sh`. Note, however, that this may require changing the configs also.
 
 ## TODOs
 Some TODOs which I would really like someone else to do :D
