@@ -81,19 +81,19 @@ Additionally, the files from the `_default` folder are used for initialization.
 
 #### Example
 
-Let us consider "eva-worker-1" for which we build the final config in some temporary folder called `_tmp`.
+Let us consider "node-worker-1" for which we build the final config in some temporary folder called `_tmp`.
 
 Initialization
 
-* copy files from `_defaults/eva` to `_tmp`
-* copy files from `_defaults/eva-worker` to `_tmp` overwriting existing files
-* copy files from `_defaults/eva-worker-1` to `_tmp` overwriting existing files
+* copy files from `_defaults/node` to `_tmp`
+* copy files from `_defaults/node-worker` to `_tmp` overwriting existing files
+* copy files from `_defaults/node-worker-1` to `_tmp` overwriting existing files
 
 Config
 
-* copy files from `eva` to `_tmp` overwriting existing files
-* copy files from `eva-worker` to `_tmp` overwriting existing files
-* copy files from `eva-worker-1` to `_tmp` overwriting existing files
+* copy files from `node` to `_tmp` overwriting existing files
+* copy files from `node-worker` to `_tmp` overwriting existing files
+* copy files from `node-worker-1` to `_tmp` overwriting existing files
 
 Thus, files from `_defaults` are used as an initialization whereas files from longer folder names overwrite files from shorter folder names. Afterwards the actual config files (not in `_defaults`) overwrite these files using the same procedure.   
 
