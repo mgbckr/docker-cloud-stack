@@ -130,7 +130,7 @@ Some TODOs which I would really like someone else to do :D
 
 
 ## Background and notes
-There are some peculiarities of my approach that I aim to justify with the following notes. Note that I am new to Docker! Thus, please feel free to discuss and provide comments and suggestions via the issue tracker!
+Here are some random (probably too short) notes for later reference. They may explain some choices I made for this project. Note that I am new to Docker! Thus, please feel free to discuss and provide comments and suggestions via the issue tracker!
 
 ### Startup and configuration
 I opted to configure and start the cluster from the master node manually rather than using any Docker based configuration or automatic start-up. Some justifications:
@@ -141,10 +141,10 @@ I opted to configure and start the cluster from the master node manually rather 
 * Finally I really wanted the cluster to start and stop automatically with `docker stack deploy` and `docker stack rm`. However, shutting down automatically in a safe way is not possible since the first thing Docker does when `docker stack rm` is issued seems to be detaching the network. Thus a organized shutdown across several nodes is not possible. Consequently, in order to not imply that the cluster will automatically shut down, I opted for a manual startup as well.
 
 ### Docker's replication
-At first I wanted to use Docker's replication to manage worker nodes dynamically. Turns out this does not work because the hostnames will not be fixed which is required for the run services.
+At first I wanted to use Docker's replication to manage worker nodes dynamically. Turns out this does not work because the hostnames will not be fixed which is required for the services I run.
 
 ### Docker's virtual IP system
-This drove me crazy! So it seems that when using virtual IPs, the host that is contacted always thinks it is contacted by the gateway responsible for handling those IPs (mostly the IP ending in .2). That's why my nodes use `dnsrr`. I figure that this HAS to be a bug_
+This drove me crazy! So it seems that when using virtual IPs (VIPs), the host that is contacted always thinks it is contacted by the gateway responsible for handling those VIPs (mostly the IP ending in .2) instead of the actual host. That's why my nodes use `dnsrr`. I figure that this HAS to be a bug.
 
 ## Related projects
 Among others, I got inspired by these projects:
