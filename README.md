@@ -24,3 +24,6 @@ bash manage.sh start_all
 You can now attach containers to the `cloudnet` network and connect to the different services. 
 
 ## Related projects
+Among others, I got inspired by these projects:
+* https://github.com/sequenceiq/hadoop-docker
+* https://github.com/big-data-europe/docker-hadoop
