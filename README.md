@@ -109,6 +109,7 @@ Some TODOs which I would really like someone else to do :D
 
 * adjust swapiness to 0 for Accumulo (keeps complaining on startup)
 * clean up, document, and unify scripts
+* expose some ports to the world (e.g., 50070 to check the status of the HDFS)
 * optimize CLI of `manage.sh`
 * replace timeouts with actual checks in start up sequence (`manage.sh`)
 * optimize `run.sh` for graceful shutdown of the cluster when `docker stack rm` is called (even though this might not be possible because currently the first thing Docker does when that command is issued is detaching the network ... grr)
