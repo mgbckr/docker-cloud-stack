@@ -5,7 +5,7 @@ My take on running [Hadoop's HDFS](https://hadoop.apache.org/), [Zookeeper](http
 
 ### Preparation
 ```bash
-# setup cluster
+# setup Docker swarm (if not already done so)
 docker swarm init --advertise-addr=<your ip>
 
 # prepare
