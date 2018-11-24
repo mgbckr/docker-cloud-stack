@@ -70,7 +70,7 @@ For adding a worker node `node-worker-4` encompasses:
 
 ## Config
 
-Configuring the cluster happens through the master node by distributing the files in the config folder across all nodes based on their host names.
+Configuring the cluster happens through the master node by distributing the files in the config folder across all nodes based on their host names. This approach allows to easily integrate new services with custom configs and also enables overwriting binary files or adding custom libraries without redeploying the Docker stack.
 
 ### General approach
 
@@ -110,7 +110,7 @@ zookeeper_version=3.4.13
 kafka_version=2.0.0
 accumulo_version=1.9.2
 ```
-You can the application versions in the `assets/build/Dockerfile.build.sh`. Note, however, that this may require changing the configs also.
+You can change the application versions in the `assets/build/Dockerfile.build.sh`. Note, however, that this may require changing the configs corresponding to the specific versions as well as may updating the download script `assets/build/Dockerfile.build.sh`.
 
 ## TODOs
 Some TODOs which I would really like someone else to do :D
