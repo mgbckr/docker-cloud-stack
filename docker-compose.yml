@@ -75,10 +75,10 @@ configs:
     file: ./assets/manage/manage.sh
   id_rsa:
     name: id_rsa-${CONFIG_VERSION:-0}
-    file: ./assets/manage/config_production/id_rsa
+    file: ./assets/manage/config/id_rsa
   id_rsa.pub:
     name: id_rsa.pub-${CONFIG_VERSION:-0}
-    file: ./assets/manage/config_production/id_rsa.pub
+    file: ./assets/manage/config/id_rsa.pub
   # for debugging
   run.sh:
     name: run.sh-${CONFIG_VERSION:-0}
@@ -91,7 +91,7 @@ networks:
 services:
   node-master-1:
     hostname: node-master-1
-    image: node-cloud-storage:latest
+    image: docker-cloud-stack:latest
     stop_grace_period: 3m
     depends_on: 
       - node-worker-1
@@ -134,7 +134,7 @@ services:
 
   node-worker-1:
     hostname: node-worker-1
-    image: node-cloud-storage:latest
+    image: docker-cloud-stack:latest
     stop_grace_period: 3m
     deploy:
       endpoint_mode: dnsrr
@@ -163,7 +163,7 @@ services:
 
   node-worker-2:
     hostname: node-worker-2
-    image: node-cloud-storage:latest
+    image: docker-cloud-stack:latest
     stop_grace_period: 3m
     deploy:
       endpoint_mode: dnsrr
@@ -192,7 +192,7 @@ services:
 
   node-worker-3:
     hostname: node-worker-3
-    image: node-cloud-storage:latest
+    image: docker-cloud-stack:latest
     stop_grace_period: 3m
     deploy:
       endpoint_mode: dnsrr

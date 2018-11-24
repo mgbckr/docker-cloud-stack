@@ -9,7 +9,7 @@ My solution to running [Hadoop's HDFS](https://hadoop.apache.org/), [Zookeeper](
 git clone https://github.com/mgbckr/docker-cloud-stack.git
 cd docker-cloud-stack
 bash build-docker.sh
-prepare_local.sh reset
+bash prepare_local.sh reset
 ```
 
 ### Start
@@ -21,7 +21,7 @@ docker stack deploy -c docker-compose.yml cloud-stack
 docker ps
 docker exec -it <node-master-1 NAME> bash
 
-# on node-master-1
+# on node-master-1 (on the first run, you will need to type in a new password for Accumulo's root user)
 bash manage.sh start_all
 ```
 
@@ -40,6 +40,8 @@ exit
 # on docker host
 docker stack rm cloud-stack 
 ```
+
+Note that you can restart the cluster and all your data will be kept if nothing went wrong.
 
 ## Cluster (swam) deployment
 The only thing you really have to do to run this on a actual docker swarm is setting the correct placement constraints for each node and adjusting the volume mappings.
@@ -105,6 +107,7 @@ You cn change them in `Dockerfile.build.sh`. Note, however, that this may requir
 ## TODOs
 Some TODOs which I would really like someone else to do :D
 
+* adjust swapiness to 0 for Accumulo (keeps complaining on startup)
 * clean up, document, and unify scripts
 * optimize CLI of `manage.sh`
 * replace timeouts with actual checks in start up sequence (`manage.sh`)
